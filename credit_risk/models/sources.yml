@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    database: INSURANCE_PROJECT
+    schema: RAW
+    tables:
+      - name: app_train
+      - name: bureau
+      - name: previous_application
+      - name: installments_payments
+      - name: pos_cash_balance
+      - name: credit_card_balance
+      - name: bureau_balance

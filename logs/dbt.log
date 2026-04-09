@@ -1,0 +1,88 @@
+[0m16:13:04.881965 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026201699A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026203863D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026203863C50>]}
+
+
+============================== 16:13:04.896166 | 8816fcd4-9ca4-4344-9fb8-fb375c681e6c ==============================
+[0m16:13:04.896166 [info ] [MainThread]: Running with dbt=1.11.8
+[0m16:13:04.897220 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'warn_error': 'None', 'invocation_command': 'dbt init credit_risk', 'log_format': 'default', 'version_check': 'True', 'introspect': 'True', 'debug': 'False', 'printer_width': '80', 'fail_fast': 'False', 'no_print': 'None', 'quiet': 'False', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'empty': 'None', 'log_path': 'logs', 'indirect_selection': 'eager', 'profiles_dir': 'C:\\Users\\Atharva Atul Joshi\\.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True'}
+[0m16:13:04.945141 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\Atharva Atul Joshi\.dbt
+[0m16:13:04.947814 [debug] [MainThread]: Starter project path: C:\Users\Atharva Atul Joshi\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\include\starter_project
+[0m16:13:04.972199 [info ] [MainThread]: 
+Your new dbt project "credit_risk" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:13:04.972926 [info ] [MainThread]: Setting up your profile.
+[0m16:13:30.704945 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m16:13:30.705342 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m16:13:30.705574 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m16:15:20.013014 [error] [MainThread]: Encountered an error:
+
+[0m16:15:20.016797 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\Atharva Atul Joshi\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Atharva Atul Joshi\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Atharva Atul Joshi\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\main.py", line 488, in init
+    results = task.run()
+  File "C:\Users\Atharva Atul Joshi\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\Atharva Atul Joshi\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Atharva Atul Joshi\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Atharva Atul Joshi\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "C:\Users\Atharva Atul Joshi\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ~~~~~~~~~~~~^
+        text, default=default, hide_input=hide_input, type=type
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Atharva Atul Joshi\AppData\Local\Programs\Python\Python313\Lib\site-packages\click\termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\Atharva Atul Joshi\AppData\Local\Programs\Python\Python313\Lib\site-packages\click\termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m16:15:20.018684 [debug] [MainThread]: Command `dbt init` failed at 16:15:20.018515 after 135.34 seconds
+[0m16:15:20.019089 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026228F65BA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026228F43AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026228F70C00>]}
+[0m16:15:20.019478 [debug] [MainThread]: Flushing usage events
+[0m16:15:25.403407 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:15:31.925087 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002280EE09A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022810FD3D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022810FD3C50>]}
+
+
+============================== 16:15:31.929117 | 7c94af5d-b400-42c5-be6d-fd12005d19e7 ==============================
+[0m16:15:31.929117 [info ] [MainThread]: Running with dbt=1.11.8
+[0m16:15:31.930007 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'use_colors': 'True', 'invocation_command': 'dbt init credit_risk', 'log_format': 'default', 'warn_error': 'None', 'introspect': 'True', 'debug': 'False', 'printer_width': '80', 'fail_fast': 'False', 'no_print': 'None', 'empty': 'None', 'quiet': 'False', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'log_path': 'logs', 'indirect_selection': 'eager', 'profiles_dir': 'C:\\Users\\Atharva Atul Joshi\\.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True'}
+[0m16:15:31.946704 [info ] [MainThread]: A project called credit_risk already exists here.
+[0m16:15:31.951114 [debug] [MainThread]: Command `dbt init` succeeded at 16:15:31.950965 after 0.19 seconds
+[0m16:15:31.951409 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002280FECFA80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228110C0950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002280FE8B570>]}
+[0m16:15:31.951686 [debug] [MainThread]: Flushing usage events
+[0m16:15:32.579663 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:18:14.405813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1A8F69A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1AB133D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1AB133C50>]}
+
+
+============================== 16:18:14.409480 | ac0b873c-a2c7-4b4e-acb8-149fc60195ff ==============================
+[0m16:18:14.409480 [info ] [MainThread]: Running with dbt=1.11.8
+[0m16:18:14.410161 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'profiles_dir': 'C:\\Users\\Atharva Atul Joshi\\.dbt', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'cache_selected_only': 'False', 'target_path': 'None', 'version_check': 'True', 'invocation_command': 'dbt init credit_risk', 'log_format': 'default', 'use_colors': 'True', 'introspect': 'True', 'debug': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'empty': 'None', 'use_experimental_parser': 'False', 'printer_width': '80', 'quiet': 'False', 'log_path': 'logs', 'indirect_selection': 'eager', 'write_json': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m16:18:14.425804 [info ] [MainThread]: A project called credit_risk already exists here.
+[0m16:18:14.428035 [debug] [MainThread]: Command `dbt init` succeeded at 16:18:14.427908 after 0.16 seconds
+[0m16:18:14.428889 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1AA03FA80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1AB220950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B1A9FE3570>]}
+[0m16:18:14.429189 [debug] [MainThread]: Flushing usage events
+[0m16:18:15.116497 [debug] [MainThread]: An error was encountered while trying to flush usage events
