@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_app_train
+    columns:
+      - name: sk_id_curr
+        tests:
+          - unique
+          - not_null
+      - name: target
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+          
+                values: [0, 1]
+
+  - name: credit_risk_features
+    columns:
+      - name: sk_id_curr
+        tests:
+          - unique
+          - not_null
+      - name: target
+        tests:
+          - not_null
